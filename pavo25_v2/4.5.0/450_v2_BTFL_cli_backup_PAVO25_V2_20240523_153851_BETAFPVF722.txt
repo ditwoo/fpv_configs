@@ -1,0 +1,253 @@
+# diff all defaults
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.5.0 Apr 28 2024 / 07:51:57 (c155f5830) MSP API: 1.46
+# config rev: 3068e6e
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name BETAFPVF722
+manufacturer_id BEFH
+mcu_id 004800483233510833383534
+signature 
+#feature -TELEMETRY
+#feature -LED_STRIP
+#feature -OSD
+
+# feature
+feature -RX_PPM
+feature -INFLIGHT_ACC_CAL
+feature -RX_SERIAL
+feature -MOTOR_STOP
+feature -SERVO_TILT
+feature -SOFTSERIAL
+feature -GPS
+feature -RANGEFINDER
+feature -TELEMETRY
+feature -3D
+feature -RX_PARALLEL_PWM
+feature -RX_MSP
+feature -RSSI_ADC
+feature -LED_STRIP
+feature -DISPLAY
+feature -OSD
+feature -CHANNEL_FORWARDING
+feature -TRANSPONDER
+feature -AIRMODE
+feature -RX_SPI
+feature -ESC_SENSOR
+feature -ANTI_GRAVITY
+feature RX_SERIAL
+feature -LED_STRIP
+feature OSD
+feature AIRMODE
+feature ANTI_GRAVITY
+
+# beacon
+beacon -RX_LOST
+beacon RX_SET
+
+# map
+map AETR1234
+
+
+# serial
+#serial 4 0 115200 57600 0 115200
+serial 4 2048 115200 57600 0 115200
+#serial 5 0 115200 57600 0 115200
+serial 5 64 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1700 2100 0 0
+aux 2 13 2 1700 2100 0 0
+aux 3 28 1 1300 2100 0 0
+aux 4 35 3 1300 2100 0 0
+aux 5 40 4 1300 2100 0 0
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
+aux 8 0 0 900 900 0 0
+aux 9 0 0 900 900 0 0
+aux 10 0 0 900 900 0 0
+aux 11 0 0 900 900 0 0
+aux 12 0 0 900 900 0 0
+aux 13 0 0 900 900 0 0
+aux 14 0 0 900 900 0 0
+aux 15 0 0 900 900 0 0
+aux 16 0 0 900 900 0 0
+aux 17 0 0 900 900 0 0
+aux 18 0 0 900 900 0 0
+aux 19 0 0 900 900 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 25 400 800 1600
+vtxtable powerlabels 25 400 800 1K6
+
+# master
+#set acc_calibration = 0,0,0,0
+set acc_calibration = 2,16,-4051,1
+set osd_flymode_pos = 14391
+set osd_crosshairs_pos = 14573
+set osd_ah_sbar_pos = 14574
+set osd_ah_pos = 14446
+set osd_craft_name_pos = 14730
+set osd_warnings_pos = 14729
+set osd_displayport_device = AUTO
+set osd_canvas_width = 30
+set osd_canvas_height = 13
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 1
+set vtx_freq = 5917
+set vcd_video_system = AUTO
+
+set min_throttle = 1070
+set max_throttle = 2000
+set min_command = 1000
+
+# motors
+set dshot_idle_value = 450
+set dshot_burst = OFF
+set dshot_bidir = ON
+set dshot_edt = OFF
+set dshot_bitbang = AUTO
+set dshot_bitbang_timer = AUTO
+set use_unsynced_pwm = OFF
+set motor_pwm_protocol = DSHOT600
+set motor_pwm_rate = 480
+set motor_pwm_inversion = OFF
+set motor_poles = 14
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+
+set thr_corr_value = 0
+set thr_corr_angle = 800
+set failsafe_delay = 15
+set failsafe_off_delay = 10
+set failsafe_throttle = 1000
+set failsafe_switch_mode = STAGE1
+set failsafe_throttle_low_delay = 100
+set failsafe_procedure = DROP
+set failsafe_recovery_delay = 10
+set failsafe_stick_threshold = 30
+set align_board_roll = 0
+set align_board_pitch = 0
+set align_board_yaw = 0
+set bat_capacity = 0
+set vbat_max_cell_voltage = 430
+set vbat_full_cell_voltage = 410
+set vbat_min_cell_voltage = 330
+set vbat_warning_cell_voltage = 350
+set vbat_hysteresis = 1
+set current_meter = ADC
+set battery_meter = ADC
+set vbat_detect_cell_voltage = 300
+set use_vbat_alerts = ON
+set use_cbat_alerts = OFF
+set cbat_alert_percent = 10
+set vbat_cutoff_percent = 100
+set force_battery_cell_count = 0
+set vbat_display_lpf_period = 30
+set vbat_sag_lpf_period = 2
+set ibat_lpf_period = 10
+set vbat_duration_for_warning = 0
+set vbat_duration_for_critical = 0
+set vbat_scale = 110
+set vbat_divider = 10
+set vbat_multiplier = 1
+set ibata_scale = 205
+set ibata_offset = -800
+set ibatv_scale = 0
+set ibatv_offset = 0
+set beeper_inversion = ON
+set beeper_od = OFF
+set beeper_frequency = 0
+set beeper_dshot_beacon_tone = 1
+set yaw_motors_reversed = OFF
+set mixer_type = LEGACY
+set crashflip_motor_percent = 0
+set crashflip_expo = 35
+set 3d_deadband_low = 1406
+set 3d_deadband_high = 1514
+set 3d_neutral = 1460
+set 3d_deadband_throttle = 50
+set 3d_limit_low = 1000
+set 3d_limit_high = 2000
+set 3d_switched_mode = OFF
+set reboot_character = 82
+set serial_update_rate_hz = 100
+set imu_dcm_kp = 2500
+set imu_dcm_ki = 0
+set small_angle = 180
+set imu_process_denom = 2
+set auto_disarm_delay = 5
+set gyro_cal_on_first_arm = OFF
+
+
+profile 0
+
+set vbat_sag_compensation = 100
+set p_pitch = 75
+set i_pitch = 105
+set d_pitch = 56
+set f_pitch = 0
+set p_roll = 60
+set i_roll = 85
+set f_roll = 0
+set p_yaw = 60
+set i_yaw = 85
+set f_yaw = 0
+set d_min_roll = 36
+set d_min_pitch = 50
+set d_max_gain = 40
+set d_max_advance = 0
+set thrust_linear = 20
+set feedforward_jitter_factor = 10
+set dyn_idle_min_rpm = 30
+set simplified_pids_mode = OFF
+set tpa_rate = 60
+set tpa_breakpoint = 1300
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+set roll_rc_rate = 5
+set pitch_rc_rate = 5
+set yaw_rc_rate = 5
+set roll_expo = 45
+set pitch_expo = 45
+set yaw_expo = 45
+set roll_srate = 72
+set pitch_srate = 72
+set yaw_srate = 54
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
